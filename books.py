@@ -12,6 +12,13 @@ BOOKS = [
 ]
 
 
-@app.get("/")
+@app.get("/books")
 def books():
     return BOOKS
+
+
+@app.get("/books/{book_title}")
+def read_books(book_title: str):
+    for book in BOOKS:
+        if book.get('title') == book_title:
+            return book
