@@ -31,3 +31,19 @@ def books_category_query(category: str):
         if book.get('category').casefold() == category.casefold():
             books_to_return.append(book)
     return books_to_return
+
+
+@app.get("/books/{book_author}/")
+def books_act_and_author(book_author: str, category: str):
+    books_to_return = []
+    for book in BOOKS:
+        if book.get('author').casefold() == book_author.casefold() and \
+                book.get('category').casefold() == category.casefold():
+            books_to_return.append(book)
+    return books_to_return
+
+
+@app.post("/books/create_book")
+def create_books(book_title: str, author: str, category: str):
+    new_Book = {"title": book_title, "author" : author, "category" : category }
+    BOOKS.append(new_Book)
