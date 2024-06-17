@@ -22,3 +22,12 @@ def read_books(book_title: str):
     for book in BOOKS:
         if book.get('title') == book_title:
             return book
+
+
+@app.get("/books/")
+def books_category_query(category: str):
+    books_to_return = []
+    for book in BOOKS:
+        if book.get('category').casefold() == category.casefold():
+            books_to_return.append(book)
+    return books_to_return
