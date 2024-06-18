@@ -1,7 +1,3 @@
-Here's a README file for the FastAPI project you provided. This README covers installation, usage, and API endpoint details.
-
----
-
 # FastAPI Bookstore API
 
 A simple FastAPI application to manage a collection of books.
@@ -49,7 +45,7 @@ A simple FastAPI application to manage a collection of books.
 
 1. Start the FastAPI server:
     ```bash
-    uvicorn main:app --reload
+    uvicorn books:app --reload
     ```
 
 2. Open your browser and go to `http://127.0.0.1:8000/docs` to see the interactive API documentation (Swagger UI).
