@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Body
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -57,8 +57,8 @@ def create_books(book_title: str, author: str, category: str):
 
 
 @app.put("/books/update_book/")
-def update_book(book: Book):
+def update_book(updated_book=Body()):
     for i in range(len(BOOKS)):
-        if BOOKS[i].get('title').casefold() == book.title.casefold():
-            BOOKS[i] = book.dict()
-            return {"message": "Book updated successfully", "book": BOOKS[i]}
+        if BOOKS[i].get('title').casefold() == updated_book.get('title').casefold():
+            BOOKS[i] = updated_book
+            return {"message": "Book updated successfully", "book": updated_book}
