@@ -41,6 +41,13 @@ A simple FastAPI application to manage a collection of books.
     pip install -r requirements.txt
     ```
 
+
+## Screenshots
+
+<img src="https://github.com/Hasan082/Fastapi_Bookstore/blob/main/img/download.png?raw=true" style="max-width: 100%">
+
+
+
 ## Quick Start
 
 1. Start the FastAPI server:
